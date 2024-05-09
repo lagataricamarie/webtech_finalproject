@@ -46,7 +46,7 @@ function App() {
         <div className='container-fluid bg-light min-vh-100'>
             <div className='row'>
                 {toggle && (
-                    <div className='col-12 col-md-3 col-lg-2 bg-white min-vh-100'>
+                    <div className='col-3 col-md-2 bg-white min-vh-100'>
                         <Sidebar setPage={handlePageChange} />
                     </div>
                 )}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Nav from './Nav';
 import { Modal, Button } from 'react-bootstrap';
 
-function Course({ Toggle, handleBack }) {
+function Course({ Toggle, handleBack, set}) {
     const [showModal, setShowModal] = useState(false);
     const [show, setShow] = useState(false);
 
@@ -17,24 +17,24 @@ function Course({ Toggle, handleBack }) {
     return (
         <div className='container-fluid px-3'>
             <Nav Toggle={Toggle} />
+            <i className='bi bi-arrow-left me-2' onClick={handleBack}></i>
             <div className='d-flex align-items-center'>
-                <i className='bi bi-arrow-left me-2' onClick={handleBack}></i>
                 <h2 className='text-black mt-2'>Capstone Project and Research 1</h2>
             </div>
             <div className='row'>
                 <div className='col'>
-                    <div className='btn mt-4 me-2 border-secondary' onClick={toggleModal}>
-                        <i className='bi bi-gear-fill fs-5 me-2'></i>
+                    <div className='btn mt-4 border-secondary' onClick={toggleModal}>
+                        <i className='bi bi-gear-fill fs-5 me-1'></i>
                         Change Percentages
                     </div>
-                    <div className='btn mt-4 me-2 border-secondary' onClick={toggleShow}>
-                        <i className='bi bi-justify fs-5 me-2'></i>
+                    <div className='btn mt-4 ms-3 border-secondary' onClick={toggleShow}>
+                        <i className='bi bi-justify fs-5 me-1'></i>
                         View Final Grade
                     </div>
                 </div>
                 <div className='col text-end'>
-                    <div className='btn mt-4 me-2 border-secondary'>
-                        <i className='bi bi-file-text fs-5 me-2'></i>
+                    <div className='btn mt-4 me-2 border-secondary' onClick={() => set('gradereport')}>
+                        <i className='bi bi-file-text fs-5 me-1'></i>
                         Grade Report
                     </div>
                 </div>
@@ -89,38 +89,38 @@ function Course({ Toggle, handleBack }) {
                                     <tr>
                                         <td>C-2021-0245</td>
                                         <td>John Paul Janaban</td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
                                     </tr>
                                     <tr>
                                     <td>C-2021-0831</td>
                                         <td>Rica Marie Lagata</td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
                                     </tr>
                                     <tr>
                                         <td>C-2021-0831</td>
                                         <td>Kc Sarmiento</td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -172,38 +172,38 @@ function Course({ Toggle, handleBack }) {
                                     <tr>
                                         <td>C-2021-0245</td>
                                         <td>Jerame Espinola</td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
                                     </tr>
                                     <tr>
                                     <td>C-2021-0811</td>
                                         <td>Lj Pegal</td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
                                     </tr>
                                     <tr>
                                         <td>C-2021-0821</td>
                                         <td>Princess Annie Rojas</td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
-                                        <td><input type="text" placeholder='--' style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
+                                        <td><input type="text" placeholder='--' readOnly style={{ width: '50px', border: '0px', textAlign: 'center' }} /></td>
                                     </tr>
                                 </tbody>
                             </table>

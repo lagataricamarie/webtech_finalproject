@@ -1,0 +1,65 @@
+import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import Sidebar from './Sidebar';
+import Gradebook from './Gradebook';
+import Home from './Home';
+import Course from './Course1';
+import Course2 from './Course2';
+import Course3 from './Course3';
+
+function App() {
+    const [currentPage, setCurrentPage] = useState('home');
+    const [toggle, setToggle] = useState(true);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768 && toggle) {
+                setToggle(false);
+            } else if (window.innerWidth >= 768 && !toggle) {
+                setToggle(true);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [toggle]);
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+        if (window.innerWidth < 768 && toggle) {
+            setToggle(false);
+        }
+    };
+
+    const Toggle = () => {
+        setToggle(!toggle);
+    };
+
+    const handleBack = () => {
+        setCurrentPage('gradebook');
+    };
+
+    return (
+        <div className='container-fluid bg-light min-vh-100'>
+            <div className='row'>
+                {toggle && (
+                    <div className='col-12 col-md-3 col-lg-2 bg-white min-vh-100'>
+                        <Sidebar setPage={handlePageChange} />
+                    </div>
+                )}
+                <div className={`col ${toggle ? 'col-md-9 col-lg-10' : 'col-md-12'}`}>
+                    {currentPage === 'home' && <Home Toggle={Toggle} />}
+                    {currentPage === 'gradebook' && <Gradebook Toggle={Toggle} setPage={handlePageChange} />}
+                    {currentPage === 'course1' && <Course Toggle={Toggle} handleBack={handleBack} />}
+                    {currentPage === 'course2' && <Course2 Toggle={Toggle} handleBack={handleBack} />}
+                    {currentPage === 'course3' && <Course3 Toggle={Toggle} handleBack={handleBack} />}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default App;

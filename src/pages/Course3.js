@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Nav from './Nav';
 import { Modal, Button } from 'react-bootstrap';
 
-function Course({ Toggle, handleBack, set}) {
+function Course({ Toggle, handleBack, setPage}) {
     const [showModal, setShowModal] = useState(false);
     const [show, setShow] = useState(false);
 
@@ -33,7 +33,7 @@ function Course({ Toggle, handleBack, set}) {
                     </div>
                 </div>
                 <div className='col text-end'>
-                    <div className='btn mt-4 me-2 border-secondary' onClick={() => set('gradereport')}>
+                    <div className='btn mt-4 me-2 border-secondary' onClick={() => setPage('gradereport')}>
                         <i className='bi bi-file-text fs-5 me-1'></i>
                         Grade Report
                     </div>

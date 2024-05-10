@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Nav from './Nav';
-import SearchBar from './SearchBar';
 
-// Sample data (replace with your actual data source)
 const subjects = [
     { id: 'PfC 5116-A', name: 'Capstone Project and Research 1' },
     { id: 'PfC 5116-B', name: 'Capstone Project and Research 1' }
@@ -13,15 +11,16 @@ function Report({ Toggle, handleBack }) {
         <div className='px-3'>
             <Nav Toggle={Toggle} />
             <i className='bi bi-arrow-left me-2' onClick={handleBack}></i>
-            <h2 className='text-black mt-3'>Grade Report Drafts</h2>
-            <div className="d-flex mt-5">
-                <label htmlFor="entries" className="me-2">Show:</label>
+            <h2 className='text-black'>Grade Report Drafts</h2>
+            <div className="d-flex mt-5 align-items-center">  <label htmlFor="entries" className="me-2">Show:</label>
                 <select id="entries">
-                    <option value="5">1</option>
-                    <option value="10">2</option>
-                    <option value="15">3</option>
+                    <option value="5">2</option>
+                    <option value="10">3</option>
+                    <option value="15">4</option>
                 </select>
                 <span className="ms-2">entries</span>
+                    <div className="ms-auto">  <input type="text" id="search" placeholder="Search..." className="form-control form-control-sm" />
+                </div>
             </div>
             <div className="table-responsive mt-4">
                 <table className="table table-striped">

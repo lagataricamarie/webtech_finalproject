@@ -6,21 +6,24 @@ function Home({ Toggle }) {
     return (
         <div className='px-3'>
             <Nav Toggle={Toggle} />
-            <div className=''>
-                <SearchBar onSearch={(searchTerm) => console.log('Searching for:', searchTerm)} />
-            </div>
-            <h1 className='text-black mt-2'>
-                Welcome, UserName!
+            <div className='d-flex justify-content-end mt-1'>
+                <div>
+                    <SearchBar onSearch={(searchTerm) => console.log('Searching for:', searchTerm)} />
+                </div>
+            </div> 
+            <div className="d-flex mt-2">  <h1 className='text-black'>
+                Welcome, [UserName!]
             </h1>
+            </div>
             <div className='container-fluid'>
                 <div className='row g-3 my-2'>
                     <div className='col-md-8'>
                         <div className='row'>
                         <div className='col-md-12 p-1'>
                         <div className='card'>
-                            <div className='card-body' style={{backgroundColor: '#E1F5EA', height: '6rem', position: 'relative'}}>
+                            <div className='card-body' style={{backgroundColor: '', height: '6rem', position: 'relative'}}>
                                 <h5 className='fs-2c card-title'>Capstone Project and Research 1</h5>
-                                <p className=''>CSS_2nd_2023_24</p>
+                                <p className=''>PfC 5116-A</p>
                                 <div className="dropdown" style={{ position: 'absolute', top: '0', right: '0' }}>
                                     <button className="btn btn-transparent" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" onClick={(e) => e.stopPropagation()}>
                                         <i className='bi bi-three-dots-vertical'></i>

@@ -34,7 +34,6 @@ function App() {
             setToggle(false);
         }
     };
-    
 
     const Toggle = () => {
         setToggle(!toggle);
@@ -43,18 +42,6 @@ function App() {
     const handleBack = () => {
         setCurrentPage('gradebook');
     };
-    const handleBackC1 = () => {
-        setCurrentPage('course1');
-    };
-
-    const handleBackC2 = () => {
-        setCurrentPage('course2');
-    };
-
-    const handleBackC = () => {
-        setCurrentPage('course3');
-    };
-
 
     return (
         <div className='container-fluid bg-light min-vh-100'>
@@ -66,10 +53,10 @@ function App() {
                 )}
                 <div className={`col ${toggle ? 'col-md-9 col-lg-10' : 'col-md-12'}`}>
                     {currentPage === 'home' && <Home Toggle={Toggle} />}
-                    {currentPage === 'gradebook' && <Gradebook Toggle={Toggle} pageSet={handlePageChange} />}
-                    {currentPage === 'course1' && <Course Toggle={Toggle} handleBack={handleBack} set={handlePageChange}/>}
-                    {currentPage === 'course2' && <Course2 Toggle={Toggle} handleBack={handleBack} set={handlePageChange}/>}
-                    {currentPage === 'course3' && <Course3 Toggle={Toggle} handleBack={handleBack} set={handlePageChange}/>}
+                    {currentPage === 'gradebook' && <Gradebook Toggle={Toggle} setPage={handlePageChange} />}
+                    {currentPage === 'course1' && <Course Toggle={Toggle} handleBack={handleBack} setPage={handlePageChange}/>}
+                    {currentPage === 'course2' && <Course2 Toggle={Toggle} handleBack={handleBack} setPage={handlePageChange}/>}
+                    {currentPage === 'course3' && <Course3 Toggle={Toggle} handleBack={handleBack} setPage={handlePageChange}/>}
                     {currentPage === 'gradereport' && <Report Toggle={Toggle} handleBack={handleBack} />}
                 </div>
             </div>
